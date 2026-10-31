@@ -1,0 +1,9 @@
+# Archivos del sistema
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Archivos de depuración o temporales
+*.tmp
+*.log

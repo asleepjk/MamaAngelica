@@ -100,11 +100,24 @@
         </div>
       </header>
 
-      <!-- Retrato Principal (03.jpg) con Marco Dorado -->
+      <!-- Retrato Principal / Video Memorial con Marco Dorado -->
       <section class="portrait-section">
         <div class="frame-outer">
           <div class="frame-inner">
-            <img src="03.jpg" alt="Fotografía de portada de Angélica Gallegos Ccapcha" class="main-portrait" id="mainPhoto">
+            <video 
+              id="mainVideo" 
+              class="main-portrait" 
+              poster="03.jpg" 
+              autoplay 
+              loop 
+              muted 
+              playsinline 
+              webkit-playsinline 
+              preload="auto"
+              aria-label="Video conmemorativo de Angélica Gallegos Ccapcha">
+              <source src="video_mama.mp4" type="video/mp4">
+              Tu navegador no soporta la reproducción de video.
+            </video>
           </div>
           <div class="frame-glow" aria-hidden="true"></div>
         </div>

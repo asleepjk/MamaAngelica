@@ -76,6 +76,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 1200);
 
   // --------------------------------------------------------------------------
+  // 1.1 REPRODUCCIÓN DEL VIDEO MEMORIAL PRINCIPAL
+  // --------------------------------------------------------------------------
+  const mainVideo = document.getElementById('mainVideo');
+  if (mainVideo) {
+    const playVideoPromise = mainVideo.play();
+    if (playVideoPromise !== undefined) {
+      playVideoPromise.catch(() => {
+        // En caso de que el navegador restrinja autoplay automático
+        const resumeOnInteraction = () => {
+          mainVideo.play();
+          window.removeEventListener('touchstart', resumeOnInteraction);
+          window.removeEventListener('click', resumeOnInteraction);
+        };
+        window.addEventListener('touchstart', resumeOnInteraction, { once: true });
+        window.addEventListener('click', resumeOnInteraction, { once: true });
+      });
+    }
+  }
+
+  // --------------------------------------------------------------------------
   // 2. CONTADOR REGRESIVO (24 de Noviembre de 2026, 6:00 PM)
   // --------------------------------------------------------------------------
   const targetDate = new Date('2026-11-24T18:00:00');
